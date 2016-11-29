@@ -1,3 +1,5 @@
+// This checks to see if app is running on local machine or Heroku, to know
+// whether to get environment variables from local .env file
 if(process.env.NODE_ENV !== 'production') require('dotenv').config();
 // To be able to use the functions and commands contained within the
 // Express module
@@ -61,5 +63,7 @@ app.delete('/mysalary/:id', function(req, res){
   });
 });
 
+// to support Heroku we use the PORT environment variable, and added to
+// .env for local configuration
 app.listen(process.env.PORT);
 console.log("Server running on port " + process.env.PORT);
