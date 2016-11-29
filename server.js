@@ -5,7 +5,7 @@ var express = require('express');
 var app = express();
 // Require the mongojs module
 var mongojs = require('mongojs');
-require('dotenv').config();
+//require('dotenv').config();
 // Which MongoDB and collection server will be using
 var db = mongojs(process.env.MONGO_URI, ['mysalary']);
 
